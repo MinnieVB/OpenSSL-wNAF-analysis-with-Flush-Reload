@@ -1,0 +1,111 @@
+\begin{thebibliography}{10}
+
+\bibitem{adelman-demarrais}
+L.~M. Adleman and J.~Demarrais.
+\newblock A {S}ubexponential {A}lgorithm for {D}iscrete {L}ogarithms over all
+  {F}inite {F}ields.
+\newblock {\em Mathematics of Computation}, 61(203):1--15, 1993.
+
+\bibitem{balasubramanian-koblitz}
+R.~Balasubramanian and N.~Koblitz.
+\newblock The {I}mprobability that an {E}lliptic {C}urve has {S}ubexponential
+  {D}iscrete {L}og {P}roblem under the {M}enezes - {O}kamoto - {V}anstone
+  {A}lgorithm.
+\newblock {\em Journal of Cryptology}, 11(2):141--145, 1998.
+
+\bibitem{cipsero10software}
+Teodoro Cipresso and Mark Stamp.
+\newblock Software reverse engineering.
+\newblock In Peter Stavroulakis and Mark Stamp, editors, {\em Handbook of
+  Information and Communication Security}, chapter~31, pages 659--696.
+  Springer, 2010.
+
+\bibitem{GallantLV00}
+Robert~P. Gallant, Robert~J. Lambert, and Scott~A. Vanstone.
+\newblock Improving the parallelized pollard lambda search on anomalous binary
+  curves.
+\newblock {\em Mathematics of Computation}, 69(232):1699--1705, 2000.
+
+\bibitem{Elgamal85}
+Taher~El Gamal.
+\newblock A public key cryptosystem and a signature scheme based on discrete
+  logarithms.
+\newblock {\em IEEE Transactions on Information Theory}, 31(4):469--472, 1985.
+
+\bibitem{gordon98survey}
+Daniel~M. Gordon.
+\newblock A survey of fast exponentiation methods.
+\newblock {\em Journal of Algorithms}, 27(1):129--146, April 1998.
+
+\bibitem{Howgrave-GrahamS01}
+Nick Howgrave-Graham and Nigel~P. Smart.
+\newblock Lattice attacks on digital signature schemes.
+\newblock {\em Designs, Codes and Cryptography}, 23(3):283--290, 2001.
+
+\bibitem{intel12optimization}
+Intel Corporation.
+\newblock {\em Intel 64 and {IA-32} Architecture Optimization Reference
+  Manual}, April 2012.
+
+\bibitem{koblitz87elliptic}
+Neal Koblitz.
+\newblock Elliptic curve cryptosystems.
+\newblock {\em Mathematics of Computation}, 48(177):203--209, January 1987.
+
+\bibitem{miller85use}
+Victor~S. Miller.
+\newblock Use of {E}lliptic {C}urves in {C}ryptography.
+\newblock In H.~C. Williams, editor, {\em Advances in Cryptology - Crypto '85},
+  volume 218 of {\em Lecture Notes in Computer Science}, pages 417--426.
+  Springer, 1985.
+
+\bibitem{nakamoto--bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock \url{http://bitcoin.org/bitcoin.pdf}.
+
+\bibitem{fips}
+National Institute of Standards and Technology.
+\newblock {\em FIPS PUB 186-4 Digital Signature Standard (DSS)}, 2013.
+
+\bibitem{nguyen03insecurity}
+Phong~Q. Nguyen and Igor~E. Shparlinski.
+\newblock The insecurity of the elliptic curve digital signature algorithm with
+  partially known nonces.
+\newblock {\em Designs, Codes and Cryptography}, 30(2):201--217, September
+  2003.
+
+\bibitem{uht95disjoint}
+Augustus~K. Uht and Vijay Sindagi.
+\newblock Disjoint eager execution: An optimal form of speculative execution.
+\newblock In {\em Proceedings of the 28th International Symposium on
+  Microarchitecture}, pages 313--325, Ann Arbor, Michigan, United States,
+  November 1995.
+
+\bibitem{walter04longer}
+Colin~D. Walter.
+\newblock Longer keys may facilitate side channel attacks.
+\newblock In Mitsuru Matsui and Robert~J. Zuccherato, editors, {\em Selected
+  Areas in Cryptography}, volume 3006 of {\em Lecture Notes in Computer
+  Science}, pages 42--57. Springer-Verlag, 2004.
+
+\bibitem{WienerZ98}
+Michael~J. Wiener and Robert~J. Zuccherato.
+\newblock Faster attacks on elliptic curve cryptosystems.
+\newblock In Stafford~E. Tavares and Henk Meijer, editors, {\em Selected Areas
+  in Cryptography}, volume 1556 of {\em Lecture Notes in Computer Science},
+  pages 190--200. Springer, 1998.
+
+\bibitem{yarom_benger_2013}
+Yuval Yarom and Naomi Benger.
+\newblock {Recovering OpenSSL ECDSA Nonces Using the FLUSH+RELOAD Cache
+  Side-channel Attack}, 2013.
+
+\bibitem{yarom13flush}
+Yuval Yarom and Katrina Falkner.
+\newblock Flush+reload: a high resolution, low noise, l3 cache side-channel
+  attack.
+\newblock Cryptology ePrint Archive, Report 2013/448, 2013.
+\newblock \url{http://eprint.iacr.org/}.
+
+\end{thebibliography}
