@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  31 OCT 2013 15:02
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  4 NOV 2013 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -301,19 +301,19 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 (./wNAF_analysis.aux)
 \openout1 = `wNAF_analysis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 22.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -381,101 +381,143 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 35
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 28
 .
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 35
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 28
 .
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 35
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 28
 .
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 35
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 28
 .
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 
 
 LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1024) in paragraph at lines 90--91
+Underfull \hbox (badness 1024) in paragraph at lines 83--84
 \OT1/ptm/m/n/10 a double-and-add method (or the re-lated right-to-left
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 129.
-[2]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 185.
 
- (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlptm.fd
+Underfull \hbox (badness 2229) in paragraph at lines 109--110
+\OT1/ptm/m/n/10 are stored and the pre-co-mu-ta-tion cost is $\OT1/ztmcm/m/n/10
+ 2[] \OMS/ztmcm/m/n/10 ^^@ \OT1/ztmcm/m/n/10 1$
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 109--110
+\OT1/ptm/m/n/10 the points $\OMS/ztmcm/m/n/10 f\OT1/ztmcm/m/n/10 3\OML/ztmcm/m/
+it/10 G; \OT1/ztmcm/m/n/10 5\OML/ztmcm/m/it/10 G; \OT1/ztmcm/m/n/10 7\OML/ztmcm
+/m/it/10 G\OMS/ztmcm/m/n/10 g$ \OT1/ptm/m/n/10 are com-puted and the set
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 109--110
+\OMS/ztmcm/m/n/10 f^^@\OT1/ztmcm/m/n/10 7\OML/ztmcm/m/it/10 G; \OMS/ztmcm/m/n/1
+0 ^^@\OT1/ztmcm/m/n/10 5\OML/ztmcm/m/it/10 G; \OMS/ztmcm/m/n/10 ^^@\OT1/ztmcm/m
+/n/10 3\OML/ztmcm/m/it/10 G; \OMS/ztmcm/m/n/10 ^^@\OML/ztmcm/m/it/10 G; G; \OT1
+/ztmcm/m/n/10 3\OML/ztmcm/m/it/10 G; \OT1/ztmcm/m/n/10 5\OML/ztmcm/m/it/10 G; \
+OT1/ztmcm/m/n/10 7\OML/ztmcm/m/it/10 G\OMS/ztmcm/m/n/10 g$ \OT1/ptm/m/n/10 are 
+used in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+[2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 146.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 188.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <7> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 185.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 188.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 185.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 186.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 188.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 189.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
 
-Underfull \hbox (badness 6708) in paragraph at lines 203--209
+Underfull \hbox (badness 6708) in paragraph at lines 196--202
 []\OT1/ptm/m/sc/10 Flu-sh+Re-load \OT1/ptm/m/n/10 mon-i-tors ex-e-cu-tion by pl
 ac-ing
  []
 
 
-LaTeX Warning: Reference `dgm:memory' on page 3 undefined on input line 211.
-
-[3]
-
-LaTeX Warning: Reference `dgm:memory' on page 4 undefined on input line 228.
+LaTeX Warning: Reference `dgm:memory' on page 4 undefined on input line 219.
 
 
-LaTeX Warning: Reference `dgm:temporal' on page 4 undefined on input line 244.
+LaTeX Warning: Reference `dgm:temporal' on page 4 undefined on input line 235.
+
+[4]
+
+LaTeX Warning: Reference `dgm:temporal' on page 5 undefined on input line 258.
 
 
-LaTeX Warning: Reference `dgm:temporal' on page 4 undefined on input line 267.
+LaTeX Warning: Citation `yarom_benger' on page 5 undefined on input line 300.
 
-[4] (./wNAF_analysis.bbl
+
+Underfull \hbox (badness 1454) in paragraph at lines 300--301
+\OT1/ptm/m/n/10 Given the higher pro-por-tion of miss-ing bits, BSGS
+ []
+
+
+LaTeX Warning: Citation `Howgrave-GrahamS01' on page 5 undefined on input line 
+302.
+
+[5] (./wNAF_analysis.bbl
 Underfull \hbox (badness 1102) in paragraph at lines 10--15
 \OT1/ptm/m/n/10 - Van-stone Al-go-rithm.  \OT1/ptm/m/it/10 Jour-nal of Cryp-tol
 -ogy\OT1/ptm/m/n/10 ,
@@ -486,49 +528,51 @@ Underfull \hbox (badness 1668) in paragraph at lines 30--34
 []\OT1/ptm/m/n/10 Taher El Gamal.  A pub-lic key cryp-tosys-tem
  []
 
-[5]
-Underfull \hbox (badness 3229) in paragraph at lines 63--66
+
+Underfull \hbox (badness 3229) in paragraph at lines 58--61
 []\OT1/ptm/m/n/10 Satoshi Nakamoto.  Bit-coin: A peer-to-peer
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 68--70
+Underfull \hbox (badness 1158) in paragraph at lines 63--65
 []\OT1/ptm/m/n/10 National In-sti-tute of Stan-dards and Tech-nol-ogy.
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 93--98
+Underfull \hbox (badness 3386) in paragraph at lines 88--93
 []\OT1/ptm/m/n/10 Michael J. Wiener and Robert J. Zuc-cher-ato.
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 100--103
+Underfull \hbox (badness 6380) in paragraph at lines 95--98
 []\OT1/ptm/m/n/10 Yuval Yarom and Naomi Benger.  Re-cov-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--103
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 \OT1/ptm/m/n/10 er-ing OpenSSL EC-DSA Nonces Us-ing the
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 100--103
+Underfull \hbox (badness 4899) in paragraph at lines 95--98
 \OT1/ptm/m/n/10 FLUSH+RELOAD Cache Side-channel At-tack,
  []
 
-) [6] (./wNAF_analysis.aux)
+[6]) [7
+
+] (./wNAF_analysis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5489 strings out of 493488
- 74749 string characters out of 3141326
- 180155 words of memory out of 3000000
- 8666 multiletter control sequences out of 15000+200000
+ 5493 strings out of 493488
+ 74796 string characters out of 3141326
+ 179155 words of memory out of 3000000
+ 8670 multiletter control sequences out of 15000+200000
  55280 words of font info for 117 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
- 38i,13n,49p,737b,1292s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,14n,49p,823b,1292s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
@@ -541,10 +585,10 @@ e/2012/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2012/t
 exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on wNAF_analysis.pdf (6 pages, 129272 bytes).
+Output written on wNAF_analysis.pdf (7 pages, 133281 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

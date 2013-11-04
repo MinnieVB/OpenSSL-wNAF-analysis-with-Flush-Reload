@@ -37,11 +37,6 @@ Daniel~M. Gordon.
 \newblock A survey of fast exponentiation methods.
 \newblock {\em Journal of Algorithms}, 27(1):129--146, April 1998.
 
-\bibitem{Howgrave-GrahamS01}
-Nick Howgrave-Graham and Nigel~P. Smart.
-\newblock Lattice attacks on digital signature schemes.
-\newblock {\em Designs, Codes and Cryptography}, 23(3):283--290, 2001.
-
 \bibitem{intel12optimization}
 Intel Corporation.
 \newblock {\em Intel 64 and {IA-32} Architecture Optimization Reference

@@ -1,13 +1,6 @@
 \documentclass[twocolumn]{article}
-\usepackage{color}
-\usepackage{soul}
-\usepackage{cite}
-\usepackage{array}
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\usepackage{amsmath, amsfonts, url, amssymb, graphics, algorithm2e,url} 
-\usepackage{xspace}
+\usepackage{color, soul, cite, array, listings, graphicx, amsfonts}
+\usepackage{amsmath, amsfonts, url, amssymb, graphics, algorithm2e, url, xspace}
 %\usepackage{psnfss2e}
 \usepackage{mathptmx}
 
@@ -28,8 +21,8 @@
 
 \begin{document}
 
-\title{Working title: Extending the capabilities of the \fl Cache Side-channel Attack on OpenSSL}
-%\author{Yuval Yarom \and Naomi Benger \and Nigel Smart}
+\title{Working title: Extending the capabilities of the \fl Cache Side-channel Attack on OpenSSL using LLL}
+%\author{Yuval Yarom \and Naomi Benger \and Nigel Smart \and}
 %\institute{Yuval Yarom \and Naomi Benger \at The University of Adelaide, \email{yval@cs.adelaide.edu.au, naomi.benger@adelaide.edu.au}}
 
 \maketitle
@@ -39,7 +32,7 @@
 \end{abstract}
 
 \section{Introduction}
-In~\cite{yarom_benger_2013} some of the issues related to using the attack when implementations used the sliding window for scalar multiplications instead of the Montgomery ladder... in this work we bypass these issues by using the LLL based techniques~\cite{nguyen03insecurity} to recover the nonce.
+In the work of Yarom and Benger~\cite{yarom_benger_2013} some of the issues related to using the attack when implementations used the sliding window for scalar multiplications instead of the Montgomery ladder... in this work we bypass these issues by using the LLL based techniques~\cite{nguyen03insecurity} to recover the nonce.
 
 \subsection{Related Work}\label{sub:related}
 This paper is not only a fantastic read but the authors are just tops too! \cite{yarom_benger_2013}
@@ -86,7 +79,7 @@ All values $(m,r,s)$ can be observed by an eavesdropper, $\bar{e}$ can be found 
 
 Our attack targets Step~\ref{scalar_mult} of the OpenSSL implementation of \myupcase{ecdsa}.
 
-\subsection{Performing scalar multiplication using wNAF}\label{sub:wnaf}
+\subsection{Scalar multiplication using wNAF}\label{sub:wnaf}
 Scalar multiplication is a common operation in cryptography and in a number of incidences (such as step~\ref{scalar_mult} of \myupcase{ecdsa}) the scalar is intended to remain secret. This scalar multiplication is most efficiently performed using a double-and-add method (or the related right-to-left method) as outlined in Algorithm~\ref{d_and_a}.\\
 
 \begin{algorithm}[htb]\label{d_and_a}
@@ -103,102 +96,102 @@ $Q\gets \mathcal{O}$\\
  \caption{Double-and-add point scalar multiplication}
 \end{algorithm}\vspace{-0.5cm}
 
+%Double-and-add methods, though efficient, are vulnerable to side-channel attacks. The addition law for points on commonly used elliptic curves is not complete. That is, the computation of $P+Q$ differs between the cases $P=Q$ and $P\neq Q.$ Consequently, it is possible to distinguish when the \texttt{if} in the  loop is executed and hence when a bit of~$n_i$ is~0.
 
-%Double-and-add methods, though efficient, are vulnerable to side-channel attacks. The addition law for points on commonly used elliptic curves is not complete.
-That is, the computation of $P+Q$ differs between the cases $P=Q$ and $P\neq Q.$ Consequently, it is possible to distinguish when the \texttt{if} in the  loop is executed and hence when a bit of~$n_i$ is~0.
+Exponentiation (point scaler multiplication for \myupcase{ecc}) is a common operation in cryptographic protocols but also one of the most expensive, much effort has been spent improving the speed of exponentiation algorithm; see \cite{gordon98survey} for a survey of exponentiation methods.
 
-In the context step~\ref{scalar_mult} of \myupcase{ecdsa} the scalar multiplication is performed on the same point every time the protocol is executed, only the random nonce changes. The wNAF method seeks to imporve efficiency by both exploiting this fact, and also by introducing more zeros into the representation of the scalar, so that additions are calculated more rarely. 
+For the \myupcase{ecdsa} as implemented using OpenSSL there are two aspects which can be exploited for: first, the scalar multiplication is performed on the same point every time; second, addition of ellitic cure points in the commonly used Weierstra{\ss} form costs the same as subtraction. Both properties are exploited by wNAF.
 
-\subsubsection{NAF}
+\subsubsection{wNAF}
 
-\subsubsection{Sliding Window}
+As the scalar multiplication of  step~\ref{scalar_mult} of \myupcase{ecdsa} is performed on the same point $G$ at every execution (the random nonce changes), by calculating and storing some small multiples of $G$ the scalar multiplication can be computed at a lower cost.
 
-
-
-
-
-***description of nWAF***
+When using a window of size $w$, $2^w-1$ extra points are stored and the precomutation cost is $2^{w-2}-1$ point additions and one point doubling. For example, the window size used by OpenSSL is $w=3$ so the points $\{3G,5G,7G\}$ are computed and the set $\{-7G,-5G,-3G,-G,G,3G,5G,7G\}$ are used in the computation of $kG$. In algorithm \ref{naf} the conversion of the scalar $k$ to the Non-Adjacent From (NAF) is given. The NAF is so named as there are no two non-zero $k_i$ which are adjacent. The first line in the \texttt{if} statement will set $k_i$ to be one of $\{\pm1,\pm3,\pm5,\pm7\}$ (for the OpenSSL implementation), this determines which of the precomputed points are used in the addition operation of the \texttt{if} statement in algorithm \ref{wnaf}, which computed $kG$.\\
 
 
-Instead of distinguishing additions from doublings, our attack identifies which arm of the \texttt{if} statement is taken.
-The technique we use is described in the next section.
+\begin{algorithm}[htb]\label{naf}
+\SetAlgoLined
+{\bf Input:} scalar $k$\\
+{\bf Output:} $k$ in wNAF: $k_0,\ldots,k_{i-1}$\\
+$i\gets 0$\\
+ \While{$k>0$}{
+  \eIf{$k\mod 2$ = 1}{
+   $k_i\gets \min(|[k \mod 2^w]-2^w|,|k \mod 2^w|)$\\
+   $k=k-k_i$
+   }{$k_i=0$}
+  $k = k/2$\\
+  $i += 1$
+ } 
+\caption{Conversion to Non-Adjacent Form}
+\end{algorithm}\vspace{-0.5cm}
 
+\begin{algorithm}[htb]\label{wnaf}
+\SetAlgoLined
+{\bf Input:} scalar $k$ in wNAF $k_0,\ldots,k_{i-1}$, Points $\{-7G,-5G,-3G,-G,G,3G,5G,7G\}$\\
+{\bf Output:} $kG$\\
+$Q\gets \mathcal{0}$\\
+\For{$j$ from $i-1$ downto $0$}{
+  $Q = 2Q$\\
+  \If{$k_j != 0$}{
+    $Q += k_jG$\\
+    }
+ } 
+\caption{Computation of $kG$ using wNAF}
+\end{algorithm}\vspace{-0.5cm}
+
+In the application of \fl by Yarom and benger~\cite{yarom_benger_2013}, exploited the spy's ability to identify which arm of the \texttt{if} statement is exploited when scalar multiplication is computed using Montgomery multiplication, as explained in the following section. The work presented in this paper extends the capability of the attack in~\cite{yarom_benger_2013}.
 
 %\newpage
 
 \subsection{The \fl attack}
-\fl is a recently developed cache side-channel attack~\cite{yarom13flush}.
-The attack exploits a weakness in the IA-32 and X86-64 processor architectures, which allows
-processes to manipulate the cache of other processes.
+
+The \fl attack, described by Yarom and Falkner~\cite{yarom13flush}, exploits a weakness in the IA-32 and X86-64 processor architectures, which allows processes to manipulate the cache of other processes.
 
 Using the attack, a spy program can trace or monitor memory read and execute access of a victim program to shared memory pages.
-The spy program only requires read access to the shared memory pages, hence pages containing binary code in executable files and
-in shared libraries are susceptible to the attack.
+The spy program only requires read access to the shared memory pages, hence pages containing binary code in executable files and in shared libraries are susceptible to the attack.
 By monitoring the victim access to specific locations in these pages, the spy program learns when the victim
 executes the code in the monitored memory locations.
 From this information the spy program can infer information on the data processed by the victim.
 
-The spy program described in Yarom and Falkner~\cite{yarom13flush} uses the \fl attack to retrieve
-the secret key from the GnuPG RSA decryption.
-The spy program monitors the phases of the square-and-multiply exponentiation~\cite{gordon98survey} used by GnuPG.  
-As these phases depend on the values of the bits of the exponent, monitoring them
-allows the spy program to recover the secret exponent.
-
-The attack operates by dividing time into slots.  
-At the beginning of a time slot, the spy program flushes the monitored memory line from the cache of the processor.
-At the end of the slot, the spy program loads data from the memory line.
-Loading data from cached memory lines is significantly faster than loading them from memory.
-Hence, by measuring the time it takes to load the data, the spy program can know whether the line is cached or not.
-As the line is flushed at the beginning of the slot, having it cached at the end indicates that the processor accessed
-the line during the time slot.
-
-When the victim memory access overlaps the spy measurement, the spy will miss the access~\cite{yarom13flush}.
-Consequently, increasing the time slot length reduces the portion of time the spy spends in
-measurement and with it the probability of missing access.
-On the other hand, the spy is unable to distinguish between multiple accesses to the same memory line in 
-a single time slot.
-It also cannot determine the order of memory accesses to different memory lines occurring in the same time slot.
-Consequently, increasing the time slot reduces the attack's resolution.
-Hence choosing the length of the time slot presents a tradeoff between the attack resolution
-and the probability of missing a memory access.
+Yarom and Falkner, in~\cite{yarom13flush}, and Yarom and Benger, in~\cite{yarom_benger_2013}, use the \fl attack to retrieve the secret key from the GnuPG RSA decryption, and retrieve the nonce used in the \myupcase{ecdsa} and hence the signer's private key, respectively. 
 
 
-\section{Attacking OpenSSL ECDSA}\label{sec:attack}
-OpenSSL is one of the most commonly used  open-source cryptographic libraries.
-It provides a set of cryptographic services, including both public key and symmetric encryption 
-algorithms, and public key signature algorithms.
+The spy program monitors the phases of the square-and-multiply exponentiation~\cite{gordon98survey} used by GnuPG and OpenSSL. As these phases depend on the values of the bits of the exponent, monitoring them allows the spy program to recover the secret exponent.
 
-OpenSSL's implementation of \myupcase{ecdsa} uses one of two methods for performing the scalar multiplication; either the Montgomery ladder of sliding window. The implementation of the Montgomery ladder has been fully analysed in~\cite{yarom_benger_2013}, in the work presented below we demonstrate that implementations using the sliding window method are equally vulnerable to the \fl attack.
+The attack operates by dividing time into slots. At the beginning of a time slot, the spy program flushes the monitored memory line from the cache of the processor. At the end of the slot, the spy program loads data from the memory line. Loading data from cached memory lines is significantly faster than loading them from memory. Hence, by measuring the time it takes to load the data, the spy program can know whether the line is cached or not. As the line is flushed at the beginning of the slot, having it cached at the end indicates that the processor accessed the line during the time slot.
+
+%When the victim memory access overlaps the spy measurement, the spy will miss the access~\cite{yarom13flush}.
+%Consequently, increasing the time slot length reduces the portion of time the spy spends in measurement and with it the probability of missing access.
+%On the other hand, the spy is unable to distinguish between multiple accesses to the same memory line in a single time slot.
+%It also cannot determine the order of memory accesses to different memory lines occurring in the same time slot.
+%Consequently, increasing the time slot reduces the attack's resolution.
+%Hence choosing the length of the time slot presents a tradeoff between the attack resolution and the probability of missing a memory access.
+
+In both of these works, the monitored branching of code by conditional statements statements would completely reveal the secret information as the condition tested for a set bit, the only alternative being a clear bits. When the implementation uses wNAF the condition is on the scalar $k$ in non-adjacent form, if the element $k_i$ is non-zero then although it is possible to detect that the \texttt{if} statement is executed, we do not immediately have the value of the non-zero $k_i$ (for OpenSSL could be any of $\{\pm1,\pm3,\pm5,\pm7\}$).
 
 
-Listing~\ref{lst:openssl} shows the relevant section of the implementation of the Montgomery ladder in OpenSSL version 1.0.1e.
-The bits of the multiplication scalar are stored in the word array \texttt{scalar->d},
-where the word size is defined by the architecture, e.g.\ 32 bits for the IA-32 architecture and 64 bits for the X86-64 architecture.
-The outer loop, at lines~268 to~286 traverses over the words representing the scalar.
-The inner loop, at lines~271 to~284 traverses the bits in each word.
-Line~273 tests the bit. 
-For each bit the implementation executes a group add followed by a group double.
-If the bit is set, the implementation uses lines~275 and~276.
-For clear bits it uses lines~280 and~281.
 
-\begin{lstlisting}[numbers=left,firstnumber=268,float=htb,caption=OpenSSL implementation of the wNAF sliding window,label=lst:openssl]
+As mentioned above, one characteristic of a number in non-adjacent form is that no two non-zero $k_i$ which are adjacent, there are (at least) $w-1$ ($=2$ for OpenSSL) zeros between the non-zero values. This is due to the fact that the subtraction of $k_i$ from $k$ in the \texttt{if} statement in algorithm \ref{naf} ``wipes out'' the lower bits of $k$. 
+
+
+\section{Attacking OpenSSL}\label{sec:attack}
+OpenSSL is one of the most commonly used  open-source cryptographic libraries. It provides a set of cryptographic services, including both public key and symmetric encryption algorithms, and public key signature algorithms.
+OpenSSL's implementation of \myupcase{ecdsa} uses one of two methods for performing the scalar multiplication; either the Montgomery ladder, fully analysed in~\cite{yarom_benger_2013}, or sliding window. We demonstrate below that implementations using the sliding window method are equally vulnerable to the \fl attack. In 
+
+\subsection{Extracting information}\label{sub:obtain_info}
+
+Listing~\ref{lst:openssl_wnaf} shows the relevant section of the implementation of the wNAF in OpenSSL version 1.0.1e.
+***The bits of the multiplication scalar are stored in the word array \texttt{scalar->d}***, where the word size is defined by the architecture, e.g.\ 32 bits for the IA-32 architecture and 64 bits for the X86-64 architecture.
+
+
+\begin{lstlisting}[numbers=left,firstnumber=268,float=htb,caption=OpenSSL implementation of the wNAF sliding window,label=lst:openssl_wnaf]
 for (; i >= 0; i--)
 {
     *** insert code
 }
 \end{lstlisting}
 
-As the listing demonstrates, the implementation is regular: For each bit, the implementation executes exactly the same sequence of operations.
-The only differences between set and clear bit are the lines that invoke these operations and the targets of these operations.
-While this is a small difference, it is sufficient for mounting an attack that recovers 
-the values of the bits.
-
-
-Our spy program uses the \fl technique to monitor the execution of the \texttt{if}
-statement in line~273.
-We distinguish between executing the \texttt{then} and the \texttt{else} blocks of the \texttt{if}
-statement.
-This information reveals the value of the bit tested by the \texttt{if} statement.
+As the listing demonstrates.... ***non-zero bits cause the code in lines X to execute***, our spy program uses the \fl technique to monitor the execution of the \texttt{if} statement in line~X. We know that one of the eight stored points was added, but not which one. 
 
 \fl monitors execution by placing probes on shared memory lines.
 For the attack to recover the bit values, it must distinguish between memory lines access sequences
@@ -208,10 +201,8 @@ the sequence of accesses to these memory lines when executing the code and
 \fl's ability to accurately capture the sequences.
 
 
-The mapping of source lines to cache lines in our build of OpenSSL is depicted in Fig.~\ref{dgm:memory}.
-The machine code created from source lines~273 to~282 covers the virtual memory address range 0x0812130C
-to 0x081213e8.
-This range spans four cache lines, marked $A$, $B$, $C$ and $D$.
+%The mapping of source lines to cache lines in our build of OpenSSL is depicted in Fig.~\ref{dgm:memory}.
+%The machine code created from source lines~273 to~282 covers the virtual memory address range 0x0812130C to 0x081213e8. This range spans four cache lines, marked $A$, $B$, $C$ and $D$.
 
 
 %\begin{figure}[htb]
@@ -304,8 +295,18 @@ Probing these lines provides the spy program with additional information on the 
 and facilitates recovering the position of captured scalar bits.
 
 
-The next section describes the details of our experimentation with the attack and its results.
+\subsection{Full Nonce Recovery}\label{sub:full_nonce}
 
+Given the higher proportion of missing bits, BSGS method as used in~\cite{yarom_benger} is not viable. 
+
+In~\cite{Howgrave-GrahamS01} the relationship with the HNP was noticed and the idea developed in~\cite{nguyen03insecurity}.
+
+
+With prob $p=2^{-n+1}$ we obtain the $n$ least significant bits. Then require $\frac{256}{n}$ signatures, thus by observing $\frac{256}{n2^{n-1}}$ signatures, we have enough to use the LLL based techniques~\cite{nguyen03insecurity}, ***implementation details, timings.***
+
+
+
+The next section describes the details of our experimentation with the attack and its results.
 
 \section{Experimental Setup and Results}\label{sec:results}
 
@@ -315,11 +316,7 @@ In real attack settings, the attacker will need to reverse engineer~\cite{cipser
 
 With the selected curve, group add operations take 23,612 cycles on average. The first group double operation takes 6,552 cycles on average, whereas further group double operations take 11,962 cycles. Based on the discussion in Section~\ref{sec:attack}, we picked a slot length of 10,240 cycles.
 
-\subsection{Full Recovery of the Nonce}\label{sub:full_nonce}
 
-Given the higher proportion of missing bits, BSGS is not viable. 
-
-With prob $p=2^{-n+1}$ we obtain the $n$ least significant bits. Then require $\frac{256}{n}$ signatures, thus by observing $\frac{256}{n2^{n-1}}$ signatures, we have enough to use the LLL based techniques~\cite{nguyen03insecurity}, ***implementation details, timings.***
 
 
 \section{Discussion}\label{sec:discussion}
