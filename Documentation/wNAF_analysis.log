@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  4 NOV 2013 12:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 NOV 2013 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -506,16 +506,9 @@ LaTeX Warning: Reference `dgm:temporal' on page 4 undefined on input line 235.
 LaTeX Warning: Reference `dgm:temporal' on page 5 undefined on input line 258.
 
 
-LaTeX Warning: Citation `yarom_benger' on page 5 undefined on input line 300.
-
-
 Underfull \hbox (badness 1454) in paragraph at lines 300--301
 \OT1/ptm/m/n/10 Given the higher pro-por-tion of miss-ing bits, BSGS
  []
-
-
-LaTeX Warning: Citation `Howgrave-GrahamS01' on page 5 undefined on input line 
-302.
 
 [5] (./wNAF_analysis.bbl
 Underfull \hbox (badness 1102) in paragraph at lines 10--15
@@ -529,32 +522,32 @@ Underfull \hbox (badness 1668) in paragraph at lines 30--34
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 58--61
+Underfull \hbox (badness 3229) in paragraph at lines 63--66
 []\OT1/ptm/m/n/10 Satoshi Nakamoto.  Bit-coin: A peer-to-peer
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 63--65
+Underfull \hbox (badness 1158) in paragraph at lines 68--70
 []\OT1/ptm/m/n/10 National In-sti-tute of Stan-dards and Tech-nol-ogy.
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 88--93
+Underfull \hbox (badness 3386) in paragraph at lines 93--98
 []\OT1/ptm/m/n/10 Michael J. Wiener and Robert J. Zuc-cher-ato.
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 95--98
+Underfull \hbox (badness 6380) in paragraph at lines 100--103
 []\OT1/ptm/m/n/10 Yuval Yarom and Naomi Benger.  Re-cov-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 \OT1/ptm/m/n/10 er-ing OpenSSL EC-DSA Nonces Us-ing the
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 95--98
+Underfull \hbox (badness 4899) in paragraph at lines 100--103
 \OT1/ptm/m/n/10 FLUSH+RELOAD Cache Side-channel At-tack,
  []
 
@@ -566,10 +559,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5493 strings out of 493488
- 74796 string characters out of 3141326
+ 5492 strings out of 493488
+ 74782 string characters out of 3141326
  179155 words of memory out of 3000000
- 8670 multiletter control sequences out of 15000+200000
+ 8669 multiletter control sequences out of 15000+200000
  55280 words of font info for 117 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,14n,49p,823b,1292s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -585,7 +578,7 @@ e/2012/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2012/t
 exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on wNAF_analysis.pdf (7 pages, 133281 bytes).
+Output written on wNAF_analysis.pdf (7 pages, 133279 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

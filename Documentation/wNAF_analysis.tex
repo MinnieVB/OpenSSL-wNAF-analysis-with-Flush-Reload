@@ -22,7 +22,7 @@
 \begin{document}
 
 \title{Working title: Extending the capabilities of the \fl Cache Side-channel Attack on OpenSSL using LLL}
-%\author{Yuval Yarom \and Naomi Benger \and Nigel Smart \and}
+%\author{Yuval Yarom \and Naomi Benger \and Nigel Smart \and Student X}
 %\institute{Yuval Yarom \and Naomi Benger \at The University of Adelaide, \email{yval@cs.adelaide.edu.au, naomi.benger@adelaide.edu.au}}
 
 \maketitle
@@ -297,12 +297,9 @@ and facilitates recovering the position of captured scalar bits.
 
 \subsection{Full Nonce Recovery}\label{sub:full_nonce}
 
-Given the higher proportion of missing bits, BSGS method as used in~\cite{yarom_benger} is not viable. 
+Given the higher proportion of missing bits, BSGS method as used in~\cite{yarom_benger_2013} is not viable. 
 
-In~\cite{Howgrave-GrahamS01} the relationship with the HNP was noticed and the idea developed in~\cite{nguyen03insecurity}.
-
-
-With prob $p=2^{-n+1}$ we obtain the $n$ least significant bits. Then require $\frac{256}{n}$ signatures, thus by observing $\frac{256}{n2^{n-1}}$ signatures, we have enough to use the LLL based techniques~\cite{nguyen03insecurity}, ***implementation details, timings.***
+With prob $p=2^{-n+1}$ we obtain the $n$ least significant bits. Then require $\frac{256}{n}$ signatures, thus by observing $\frac{256}{n2^{n-1}}$ signatures, we have enough to use the LLL based techniques~\cite{nguyen03insecurity}, ***implementation details***
 
 
 
